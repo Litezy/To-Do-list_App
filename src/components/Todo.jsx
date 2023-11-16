@@ -10,7 +10,7 @@ const Todo = ({ task, handleMove, isDone, color,selectedtask, setSelectedtask}) 
     const button = isDone ? 'Undo': 'mark as done'
 
     return (
-        <div className="border-2 head">
+        <div className=" head">
             <div className=" border-2 font-semibold todo px-10 py-4 mt-3 flex item-center justify-between  ">
                 <input className=' self-stretch input' type="checkbox" onChange={handleChange} />
                 <h4 className=' capitalize text-2xl'>{task.taskName}</h4>
