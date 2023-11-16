@@ -57,21 +57,21 @@ const App = () => {
 
   return (
     <div>
-      <div className="pt-10 text-5xl text-black font-bold header   text-center">To-Do List Memo</div>
+      <div className="pt-10 md:text-5xl text-black font-bold header text-2xl   text-center">To-Do List Memo</div>
       <p className='shadow-xl text-black font-bold text-xl text-center mt-5'>A simple to-do list app</p>
       <div className="flex flex-col items-center justify-between w-[80%] mx-auto my-10 ">
-        <div className="add-task w-[50%]">
+        <div className="add-task w-[100%]">
           <form onSubmit={handleclick}>
             <div className="flex flex-col items-center justify-between w-[100%] gap-10  ">
-              <input onChange={updatevalue} placeholder='Add task here' value={forms.taskName} type="text" className='border-2 text-lg font-semibold border-black w-[90%] md:w-11/12 py-3 outline-none px-3' />
+              <input onChange={updatevalue} placeholder='Add task here' value={forms.taskName} type="text" className='border-2 text-lg font-semibold input border-black w-[90%] md:w-11/12 py-3 outline-none px-3' />
               <button className='text-2xl text-white font-bold px-5 py-3 rounded-md bg-blue-400 '>Add ToDo</button>
             </div>
           </form>
         </div>
       </div>
       <div className="md:flex w-[100%] items-center grid grid-cols-1 justify-between gap-20 px-5 my-10 ">
-        <div className="list md:w-[40%] w-[100%] self-start   border-2 ">
-          <div className=" text-center font-bold text-3xl ">Undone Lists</div>
+        <div className="list md:w-[40%] w-[100%] self-start ">
+          <div className=" text-center font-bold text-3xl underline">Undone Lists</div>
           {todoList.map((task, i) => (
             <Todo
               key={i}
@@ -85,8 +85,8 @@ const App = () => {
             
           ))}
         </div>
-        <div className="md:w-[40%] w-[100%] self-start border-4">
-          <div className="text-center font-bold text-3xl">Done Lists</div>
+        <div className="md:w-[40%] w-[100%] self-start ">
+          <div className="text-center font-bold text-3xl underline">Done Lists</div>
           {done.map((task, i) =>(
            <Todo key={i} task={task}
            handleMove={() =>returnMove(task)}
