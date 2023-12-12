@@ -4,9 +4,8 @@ import { FaCheckCircle } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
 import Firstbutton from './Firstbutton';
 
-const Todo = ({ item,progress, handleEdit, Deletetask,list, setList,ToggleHandler,updateMessage }) => {
+const Todo = ({ item,progress2, handleEdit2, Deletetask2,finallist, setFinalList,ToggleHandler2,updateMessage }) => {
  
-  // const [progress, setProgress] = useState([])
 
 
   const [form, setForm] = useState({
@@ -36,7 +35,7 @@ const Todo = ({ item,progress, handleEdit, Deletetask,list, setList,ToggleHandle
       date: editDate ? form.date : item.date,
       time: editTime ? form.time : item.time
     }
-    handleEdit(item.id, updateForm)
+    handleEdit2(item.id, updateForm)
     setEditTitle(false)
     setEditDate(false)
     setEditTime(false)
@@ -49,15 +48,15 @@ const Todo = ({ item,progress, handleEdit, Deletetask,list, setList,ToggleHandle
   }
 
   const Duplicate = (id) => {
-    const oldArray = list.filter((item) => item.id === id)
-    const newArray = [...list,...oldArray]
-    setList(newArray)
+    const oldArray = finallist.filter((item) => item.id === id)
+    const newArray = [...finallist,...oldArray ]
+    setFinalList(newArray)
     console.log(item.id)
-    updateMessage('Task Duplicated Successfully', 'green', true)
+    updateMessage('Task Diplicated Successfully', 'green' ,true)
   }
 
 return (
-  <div className='mt-2 rounded-md px-2 bg-purple-500 '>
+  <div className='mt-2 rounded-md px-2 bg-purple-400'>
     <div className="w-full ">
       <div className="flex items-center justify-between font-bold text-lg ">
 
@@ -106,12 +105,11 @@ return (
 
       </div>
       <div className="">
-        <input type="checkbox" value={item.id} checked={progress.includes(item.id)}  onChange={ToggleHandler} />
+        <input type="checkbox" value={item.id} checked={progress2.includes(item.id)}  onChange={ToggleHandler2} />
       </div>
       <div className="flex itesm-center justify-between mb-2">
-        <button className='px-3 py-1 bg-red-500 mb-2 text-xs rounded-md text-white mt-1' onClick={Deletetask}>Delete Task</button>
+        <button className='px-3 py-1 bg-red-500 mb-2 text-xs rounded-md text-white mt-1' onClick={Deletetask2}>Delete Task</button>
         <button onClick={() => Duplicate(item.id)} className='px-2 py-2 bg-green-400 text-white mb-2 rounded-md'>Duplicate</button>
-      {/* <div className="">  {inprogress}</div> */}
       </div>
     </div>
   </div>
