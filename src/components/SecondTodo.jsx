@@ -60,7 +60,7 @@ return (
     <div className="w-full ">
       <div className="flex items-center justify-between font-bold text-lg ">
 
-        <h4 className='font-bold'>Task</h4>
+        <h4 className='font-bold'>Task:</h4>
         {editTitle ? <form className='bg-green-300' onSubmit={handleSubmission}>
           <input className='px-2' type="text" name="title" value={form.title} onChange={handleChange} />
           <div className="flex items-center justify-between my-2 px-2">
@@ -75,7 +75,7 @@ return (
 
 
       <div className="flex items-center justify-between font-bold text-lg ">
-        <h4>Date</h4>
+        <h4>Date:</h4>
         {editDate ? <form className='bg-green-300' onSubmit={handleSubmission}>
           <input type="date" name="date" value={form.date} onChange={handleChange} />
           <div className="flex items-center justify-between my-2 px-2">
@@ -90,7 +90,7 @@ return (
       </div>
 
       <div className="flex items-center justify-between font-bold text-lg ">
-        <h4>Time</h4>
+        <h4>Time:</h4>
         {editTime ? <form className='bg-green-300' onSubmit={handleSubmission}>
           <input type="time" name="time" value={form.time} onChange={handleChange} />
           <div className="flex items-center justify-between my-2 px-2">

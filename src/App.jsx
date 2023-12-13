@@ -212,6 +212,7 @@ const moveback= () => {
 
 }
 
+
 // Delete a todo item
 const Deletetask = (id) => {
   const localdata = JSON.parse(localStorage.getItem(localName))
@@ -242,7 +243,7 @@ if(findByIndex){
       text={message.text}
       closeView={() => setMessage({...message, status:false})}/>}
       <div className="w-[90%] mx-auto  ">
-      <div className="text-3xl w-[100%] text-center pt-10 font-bold">A Simple To-do list Application</div>
+      <div className="text-xl md:text-3xl w-full md:w-[100%] text-center pt-10 font-bold text-purple-500">A Simple To-do list Application</div>
       <FormComponent
       forms={forms}
       list={list}
@@ -254,8 +255,8 @@ if(findByIndex){
       <div className="mt-5 ml-10">
       </div>
       </div>
-      <div className="flex items-center justify-evenly gap-10 w-[80%] mx-auto my-10 ">
-        <div className="w-[50%] mx-auto self-start  ">
+      <div className="grid md:flex md:items-center md:justify-evenly md:gap-10 w-[80%] mx-auto my-10  ">
+        <div className="w-full md:w-[50%] mx-auto self-start   my-10 md:my-0  ">
          <input type="checkbox" checked={checked}  onChange={selectAllUncomplete} /> <span className='pl-2 font-semibold text-lg'>{name}</span> 
           <div className="font-bold text-center text-2xl text-purple-400 ">Uncompleted Lists</div>
          {Array.isArray(list) &&  list.map((item,index) => (
@@ -286,7 +287,7 @@ if(findByIndex){
         {status2 && <Secondbutton
         status2={status2}
         moveback={moveback}/>}
-        <div className="w-[50%] mx-auto self-start ">
+        <div className="w-full md:w-[50%] mx-auto self-start ">
         <input className=' cursor-pointer' type="checkbox" checked={checked2} onChange={selectAllDone} /> <span className='pl-2 font-semibold text-lg'>{name}</span>
         <div className="font-bold text-center text-2xl text-purple-400  w-full">Completed Lists</div>
         {Array.isArray(finallist) &&  finallist.map((item,index) => (
